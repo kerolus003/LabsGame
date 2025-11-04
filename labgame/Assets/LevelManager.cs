@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LevelManager : MonoBehaviour
+{
+    public GameObject CurrentCheckpoint;
+    public Transform player;  
+    // Start is called before the first frame update
+    void Start()
+    {
+       CurrentCheckpoint = null;
+        
+    }
+
+
+
+    public void RespawnPlayer()
+    {
+        FindObjectOfType<PlayerControl>().transform.position= CurrentCheckpoint.transform.position;
+
+    }
+}
